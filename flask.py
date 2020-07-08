@@ -7,6 +7,7 @@ from random import randint
 
 app = Flask(__name__, static_url_path='/static')
 
+#데이터베이스에서 정보를 추출하여 카카오 오픈빌더로 전송해야함으로 mysql 접속 코드 
 con = pymysql.connect(host='아마존 RDS서버 호스트명 ',
                                  port=3306,
                                  user='데이터베이스 유저명 ',
@@ -15,8 +16,8 @@ con = pymysql.connect(host='아마존 RDS서버 호스트명 ',
                                  charset='utf8')
 
 
-@app.route('/message', methods=['POST','GET'])
-def Message():
+@app.route('/message', methods=['POST','GET']) #카카오 오픈빌더에서 요청하고있는 기본형식  
+def Message(): 
        req = request.get_json()
        req = req('userRequest']
        req = req['user']
