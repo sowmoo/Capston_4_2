@@ -1,5 +1,5 @@
 import requests #request요청하여 html 문장들을 전부 가져옴 
-from bs4 import BeautifulSoup #python의 형식에는 맞지 않는 형식이라 BeautifulSoup를 사용하여 python에 맞게 형식 맞춤 
+from bs4 import BeautifulSoup #request한 html문장들이 python의 형식에는 맞지 않는 형식이라 BeautifulSoup를 사용하여 python에 맞게 형식 맞춤 
 
 request = requests.get('http://www.chosun.ac.kr/user/indexSub.do?codyMenuSeq=339072&siteId=scho') #크롤링할 주소 request 요청 
 html = request.text 
